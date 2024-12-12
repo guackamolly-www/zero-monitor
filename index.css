@@ -1,0 +1,236 @@
+@import url("static/fonts/index.css");
+
+:root {
+    --red: #e78284;
+    --redish: #e73a40;
+    --white: #ffffff;
+    --border: #ccc;
+    --background: #f2d5cf53;
+    --foreground: #f2d5cfD9;
+    --progress-bar: #eba0ac;
+
+    background-color: var(--background);
+    font-family: 'Jetbrains Mono', system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+main::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+}
+
+main::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+}
+
+
+table.full {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+footer>nav {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+pre code {
+    display: block;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    padding: 8px;
+    border: 2px dashed var(--border);
+    background-color: var(--foreground);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 32px;
+}
+
+input {
+    width: 60%;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+h1,
+h2,
+p,
+span {
+    text-align: center;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+span.offline {
+    color: var(--redish);
+}
+
+fieldset.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+button {
+    font-family: inherit;
+    text-align: center;
+    width: fit-content;
+    padding: 4px 8px 4px 8px;
+}
+
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-content-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.main-content-2 {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 80%;
+}
+
+.main-content-3 {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 80%;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.logo-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: currentColor;
+    gap: 12px;
+}
+
+.logo-text {
+    font-size: small;
+    color: var(--redish);
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.min {
+    width: min-content;
+}
+
+.fit {
+    width: fit-content;
+}
+
+@media screen and (max-width: 1440px) {
+    main {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    header {
+        flex-direction: column;
+    }
+
+    footer {
+        justify-content: center;
+    }
+}
