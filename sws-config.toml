@@ -2,5 +2,6 @@
 
 root="./"
 port=8080
+host="::"
 
 cache-control-headers = false

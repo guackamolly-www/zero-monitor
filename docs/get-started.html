@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zero Monitor - Get Started</title>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <!-- Open Graph -->
+        <meta name="description"
+            content="Deploy and connect monitoring agents anywhere in seconds.">
+        <meta property="og:title"
+            content="Zero Monitor - Get Started">
+        <meta property="og:description"
+            content="Deploy and connect monitoring agents anywhere in seconds.">
+        <meta name="keywords"
+            content="monitor, monitoring, windows, macos, linux, golang, cross-platform, metrics, zeromq, prometheus, zabbix, observability, rasbperry-pi, command-control, free, open-source">
+        <meta property="og:image"
+            content="https://guackamollyapps.com/zero-monitor/static/png/open-graph-cover.png">
+        <meta property="og:type" content="website">
+        <meta property="og:url"
+            content="https://guackamollyapps.com/zero-monitor">
+        <meta property="og:url"
+            content="https://guackamollyapps.com/zero-monitor">
+        <meta property="og:site_name"
+            content="Zero Monitor - Get Started">
+
+        <link rel='stylesheet' type='text/css' media='screen' href='../index.css'>
+        <link rel='stylesheet' type='text/css' media='print' href='../index.css'>
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a class="logo-top" href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                        height="32" fill="#000000" viewBox="0 0 256 256"><path
+                            d="M240,128a8,8,0,0,1-8,8H204.94l-37.78,75.58A8,8,0,0,1,160,216h-.4a8,8,0,0,1-7.08-5.14L95.35,60.76,63.28,131.31A8,8,0,0,1,56,136H24a8,8,0,0,1,0-16H50.85L88.72,36.69a8,8,0,0,1,14.76.46l57.51,151,31.85-63.71A8,8,0,0,1,200,120h32A8,8,0,0,1,240,128Z"></path></svg>
+                    <span>Zero Monitor</span>
+                </a>
+
+                <a class="logo-text" href="https://guackamollyapps.com"
+                    target="_blank">by
+                    Guackamolly Apps</a>
+            </div>
+
+            <nav>
+                <a
+                    href="../docs">Documentation</a>
+                <a
+                    href="https://github.com/guackamolly/zero-monitor">GitHub</a>
+                <a
+                    href="https://beta.zero-monitor.guackamollyapps.com/network">Demo</a>
+            </nav>
+        </header>
+        <main>
+            <section class="main-content-1">
+                <h1>Get Started</h1>
+                <p>
+                    The simplest way to get started is by using the one-click deploy scripts provided by the tool.
+                    These will download the most appropriate binary for your OS, from the <b>latest release</b> on GitHub. 
+                </p>
+                <article>
+                    <legend>Master Agent</legend>
+                    <pre><code># Linux/macOS
+bash &lt;(wget -qO- https://raw.githubusercontent.com/guackamolly/zero-monitor/refs/heads/master/.github/get-master)
+
+# Windows
+curl -s -o %TEMP%\get-master.bat https://raw.githubusercontent.com/guackamolly/zero-monitor/refs/heads/master/.github/get-master.bat
+"%TEMP%\get-master.bat"</code></pre>
+                    <legend>Node/Monitoring Agent</legend>
+                    <pre><code># Linux/macOS
+bash &lt;(wget -qO- https://raw.githubusercontent.com/guackamolly/zero-monitor/refs/heads/master/.github/get-node)
+
+# Windows
+curl -s -o %TEMP%\get-master.bat https://raw.githubusercontent.com/guackamolly/zero-monitor/refs/heads/master/.github/get-node.bat
+"%TEMP%\get-master.bat"</code></pre>
+                </article>
+
+                <p>
+                    (Pro-tip: use these scripts as they keep track of the latest release versions!)
+                </p>
+                <section>
+                    
+                </section>
+            </section>
+            <section class="main-content-2">
+                <div class="divider"></div>
+                <h2>Master Agent</h2>
+                <p>
+                    Before deploying monitoring agents in any of your servers, you need to deploy the <b>master</b> agent
+                    that will receive information from the servers and expose it in a <b>dashboard</b>. To do so, you can use the initialization script or <a href="https://github.com/guackamolly/zero-monitor/releases" target="_blank">download</a> it from GitHub.
+                </p>
+                
+                <pre>
+                    <code>                                 @@
+                                @  @
+                            @@@     @   @@@
+                                     @ @
+                                     @@
+
+One-click lightweight server monitor tool based on ZeroMQ protocol.
+https://github.com/guackamolly/zero-monitor
+___________________________________________________________________
+2024/12/18 10:42:56 (info): ⇨ ZeroMQ server started on tcp://[::]:36113
+2024/12/18 10:42:57 (info): ⇨ http server started on http://[::]:8080
+                    </code>
+                </pre>
+                <article>
+                    By default, Master opens two ports accessible within the <b>private</b> network (0.0.0.0):
+                    <ul>
+                        <li><b>(HTTP) 8080</b> - this is where the dashboard can be accessed and where you will be able to control the network</li>
+                        <li><b>(TCP) 36113</b> - this is where monitoring agents will connect to send information and receive commands</li>
+                    </ul>
+                    Later you can customize the default configuration (see <a href="https://github.com/guackamolly/zero-monitor/blob/master/docs/env.md">env.md</a>) file, but for now open the <a href="http://localhost:8080/dashboard" target="_blank">dashboard page</a>.
+                </article>
+                <img class="cover border" src="../static/png/new-user.png" alt="screenshot of the new user page"/>
+                <article>
+                    Certain areas like the dashboard page are restricted to admin users. Since this is the first time you're using the tool,
+                    you will be required to create an admin user to access the dashboard. Use a <b>strong password</b> and note it down!
+                </article>
+                <img class="cover border" src="../static/png/dashboard-before-share.png" alt="screenshot of the dashboard page before clicking on the share button to generate an invite link"/>
+                <article>
+                    After creating the admin account, you can now access the dashboard page. Click on the <b>Share</b> button.
+                </article>
+                <img class="cover border" src="../static/png/dashboard-after-share.png" alt="screenshot of the dashboard page after clicking on the share button to generate an invite link"/>
+                <article>
+                    You now have an invite link that you can pass to nodes. With these links, nodes will be able to connect to the network by prompting the master agent about two things:
+                    <ul>
+                        <li>the <b>public key file</b> to encrypt the communication when exchanging symmetric keys that will protect sensitive data (see <a href="https://github.com/guackamolly/zero-monitor/blob/master/docs/transport-security.md#pubsub-server">transport-security.md</a>)</li>
+                        <li>the <b>connection data</b> to use to connect with master agent</li>
+                    </ul>
+                    <p>
+                        These links are <b>ephemeral</b> and will live for only a short time. These are also sensitive, since they allow any node to <b>authenticate</b> with the network, so you must make sure you don't share them with anyone!
+                        Head back to the homepage by clicking the Zero Monitor logo.
+                    </p>
+                </article>
+            </section>
+            <section class="main-content-2">
+                <div class="divider"></div>
+                <h2>Node/Monitoring Agent</h2>
+                <p>
+                    Connecting nodes to the network is also really easy. The homepage should now include the invite link that was previously generated, so you can just copy and paste them in the server to monitor shell.
+                </p>
+                <img class="cover border" src="../static/png/homepage-after-share.png" alt="screenshot of the homepage after generating an invite link"/>
+                <article>
+                    <p>If all goes well, you should have these logs in the monitoring shell.</p>
+                </article>
+                <pre>
+                    <code>                                                @@
+                                                @  @
+                                            @@@    @    @@@
+                                                    @  @
+                                                    @@
+ 
+ One-click lightweight server monitor tool based on ZeroMQ protocol.
+ https://github.com/guackamolly/zero-monitor
+ ___________________________________________________________________
+ 
+ > GET [http://192.168.1.164:8081/network?join=93c5f3d5-7c91-4664-919b-3247e743081f]
+ > GET [http://192.168.1.164:8081/network/public-key?join=93c5f3d5-7c91-4664-919b-3247e743081f]
+ > GET [http://192.168.1.164:8081/network/connection-endpoint?join=93c5f3d5-7c91-4664-919b-3247e743081f]
+ 2024/12/26 12:32:34 started zeromq pub socket on addr: tcp://[192.168.1.164]:36113
+                    </code>
+                </pre>
+                <article>
+                    After opening the <a href="http://localhost:8080/network" target="_blank">network page</a> you notice that the server is now sending information to master!
+                </article>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <legend>Documentation</legend>
+                <a href="../docs/get-started">Get Started</a>
+                <a
+                    href="https://github.com/guackamolly/zero-monitor/releases/latest">Download</a>
+            </nav>
+            <nav>
+                <legend>GitHub</legend>
+                <a
+                    href="https://github.com/guackamolly/zero-monitor">Repository</a>
+                <a
+                    href="https://github.com/guackamolly/zero-monitor/blob/master/CONTRIBUTING.md">Contributing</a>
+                <a
+                    href="https://github.com/guackamolly/zero-monitor/blob/master/SECURITY.md">Security</a>
+            </nav>
+            <nav>
+                <legend>Contact</legend>
+                <a
+                    href="mailto:guackamolly.apps+zero-monitor@gmail.com">Mail</a>
+                <a
+                    href="mailto:guackamolly.apps+zero-monitor+security@gmail.com">Security</a>
+            </nav>
+            <nav>
+                <legend>Builders</legend>
+                <div>
+                    <a href="https://github.com/freitzzz">João Freitas</a>
+                    <img
+                        src="../static/png/freitzzz-pfp-24.png"
+                        alt="profile picture of João Freitas">
+                </div>
+            </nav>
+        </footer>
+    </body>
+</html>
